@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { toastStyle } from "../../utils";
-import { useAuthContext } from "../../context";
+import { useAuthContext, useThemeContext } from "../../context";
 import { authConstants } from "../../constants";
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
 		{ name: "Pomodoro", link: "/pomodoro" },
 	];
 	const [mobileNav, setMobileNav] = useState(false);
-	const [theme, setTheme] = useState("Light");
+	const { colorTheme, setTheme } = useThemeContext();
 	const {
 		authState: { token },
 		authDispatch,
@@ -29,20 +29,20 @@ function Navbar() {
 		toast.success("Logout Successfully ", toastStyle);
 	};
 	return (
-		<div className="shadow-md w-full sticky top-0 left-0 md:flex justify-around  items-center bg-white  py-4 md:px-10 px-7 text-lg font-medium">
+		<div className="shadow-md w-full sticky top-0 left-0 md:flex justify-around  items-center bg-white  py-4 md:px-10 px-7 text-lg font-medium dark:bg-neutral-700 dark:text-white transition-all duration-300 ease-in">
 			<Link to="/">
-				<h2 className="font-bold hover:text-green-500"> ✅ Tomato</h2>
+				<h2 className="font-bold hover:text-green-500 ">✅ Tomato</h2>
 			</Link>
 			<div className=" absolute flex right-8 top-4 cursor-pointer md:hidden">
-				{theme === "Light" ? (
+				{colorTheme === "light" ? (
 					<SunIcon
 						className="block h-8 w-8 mr-4 md:hidden self-center"
-						onClick={() => setTheme("Dark")}
+						onClick={() => setTheme(colorTheme)}
 					/>
 				) : (
 					<MoonIcon
 						className="block h-8 w-8 mr-4 md:hidden self-center "
-						onClick={() => setTheme("Light")}
+						onClick={() => setTheme(colorTheme)}
 					/>
 				)}
 				{mobileNav ? (
@@ -58,19 +58,19 @@ function Navbar() {
 				)}
 			</div>
 			<ul
-				className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+				className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9   bg-white dark:bg-neutral-700 dark:text-white transition-all duration-300 ease-in  ${
 					mobileNav ? "top-10 " : "top-[-470px]"
 				}`}
 			>
 				{Links.map((link) => (
-					<li key={link.name} className="md:ml-8 text-l md:my-0 my-7">
+					<li key={link.name} className="md:ml-8 text-l md:my-0 my-7 ">
 						<Link to={link.link} className=" hover:text-green-500 duration-500">
 							{link.name}
 						</Link>
 					</li>
 				))}
 				{!matchPath("/", pathname) ? (
-					<li className="md:ml-8 text-l md:my-0 my-7">
+					<li className="md:ml-8 text-l md:my-0 my-7 ">
 						<Link
 							to="/userProfile"
 							className="hover:text-green-500 duration-500"
@@ -81,30 +81,30 @@ function Navbar() {
 				) : null}
 				{token ? (
 					<li
-						className="md:ml-8 text-l md:my-0 my-7"
+						className="md:ml-8 text-l md:my-0 my-7 "
 						onClick={(e) => {
 							e.preventDefault();
 							logoutHandler(authDispatch);
 						}}
 					>
-						<p className="hover:text-green-500 duration-500">Logout</p>
+						<p className="hover:text-green-500 duration-500 ">Logout</p>
 					</li>
 				) : (
-					<li className="md:ml-8 text-l md:my-0 my-7">
+					<li className="md:ml-8 text-l md:my-0 my-7 bg-white ">
 						<Link to="/login" className=" hover:text-green-500 duration-500">
 							Login
 						</Link>
 					</li>
 				)}
-				{theme === "Light" ? (
+				{colorTheme === "light" ? (
 					<SunIcon
 						className="hidden h-6 w-6 ml-10 md:block "
-						onClick={() => setTheme("Dark")}
+						onClick={() => setTheme(colorTheme)}
 					/>
 				) : (
 					<MoonIcon
 						className="hidden h-6 w-6 ml-10 md:block "
-						onClick={() => setTheme("Light")}
+						onClick={() => setTheme(colorTheme)}
 					/>
 				)}
 			</ul>

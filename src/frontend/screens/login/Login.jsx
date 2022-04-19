@@ -50,9 +50,9 @@ function Login() {
 		}
 	};
 	return (
-		<div className="flex justify-center items-center  w-full h-screen">
-			<div className="flex items-center justify-around shadow-md">
-				<div className="hidden md:block  h-1/2 w-1/2 p-4">
+		<div className="flex justify-center items-center  w-full h-screen  ">
+			<div className="flex items-center justify-around shadow-md ">
+				<div className="hidden md:block  h-1/2 w-1/2 p-4 ">
 					<img
 						className="h-full w-full bg-cover "
 						src={loginImg}
@@ -108,7 +108,7 @@ function Login() {
 						<div className="mt-6">
 							<label
 								htmlFor="password"
-								className="block text-sm font-medium text-gray-700 leading-5"
+								className="block text-sm font-medium text-gray-700 leading-5 dark:text-white"
 							>
 								Password
 							</label>
@@ -135,7 +135,7 @@ function Login() {
 								/>
 								<label
 									htmlFor="remember"
-									className="block ml-2 text-sm text-gray-900 leading-5"
+									className="block ml-2 text-sm text-gray-900 leading-5 dark:text-white"
 								>
 									Remember
 								</label>

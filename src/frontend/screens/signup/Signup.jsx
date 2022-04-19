@@ -146,7 +146,7 @@ function Signup() {
 						<div className="mt-2">
 							<label
 								htmlFor="password"
-								className="block text-sm font-medium text-gray-700 leading-5"
+								className="block text-sm font-medium text-gray-700 leading-5 dark:text-white"
 							>
 								Password
 							</label>
@@ -173,7 +173,7 @@ function Signup() {
 								/>
 								<label
 									htmlFor="remember"
-									className="block ml-2 text-sm text-gray-900 leading-5"
+									className="block ml-2 text-sm text-gray-900 leading-5 dark:text-white"
 								>
 									I accept Terms and Conditions
 								</label>

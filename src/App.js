@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 	return (
-		<div className="App">
+		<div className="dark:bg-neutral-800 dark:text-white min-h-screen ">
 			<AllRoutes />
 			<ToastContainer />
 		</div>
