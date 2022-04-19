@@ -4,8 +4,9 @@ import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { toastStyle } from "../../utils";
-import { useAuthContext, useThemeContext } from "../../context";
+import { useAuthContext } from "../../context";
 import { authConstants } from "../../constants";
+import { useTheme } from "../../hooks";
 
 function Navbar() {
 	const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Navbar() {
 		{ name: "Pomodoro", link: "/pomodoro" },
 	];
 	const [mobileNav, setMobileNav] = useState(false);
-	const { colorTheme, setTheme } = useThemeContext();
+	const [colorTheme, setTheme] = useTheme();
 	const {
 		authState: { token },
 		authDispatch,
