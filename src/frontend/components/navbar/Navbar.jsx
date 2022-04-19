@@ -91,7 +91,7 @@ function Navbar() {
 						<p className="hover:text-green-500 duration-500 ">Logout</p>
 					</li>
 				) : (
-					<li className="md:ml-8 text-l md:my-0 my-7 bg-white ">
+					<li className="md:ml-8 text-l md:my-0 my-7  ">
 						<Link to="/login" className=" hover:text-green-500 duration-500">
 							Login
 						</Link>
