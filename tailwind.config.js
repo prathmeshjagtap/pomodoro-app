@@ -3,6 +3,7 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+	darkMode: "class",
 	variants: {
 		extend: {
 			display: ["group-hover"],
