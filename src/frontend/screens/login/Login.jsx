@@ -50,8 +50,8 @@ function Login() {
 		}
 	};
 	return (
-		<div className="flex justify-center items-center  w-full h-screen  ">
-			<div className="flex items-center justify-around shadow-md ">
+		<div className="flex justify-center items-center  w-full h-screen">
+			<div className="flex items-center justify-around shadow-2xl dark:bg-neutral-700 rounded-md bg-white ">
 				<div className="hidden md:block  h-1/2 w-1/2 p-4 ">
 					<img
 						className="h-full w-full bg-cover "
@@ -161,7 +161,7 @@ function Login() {
 								</button>
 								<button
 									type="button"
-									className="mt-1 p-2 border-green-400 w-full  text-sm font-bold text-green-600 rounded-md border-2 "
+									className="mt-1 p-2 border-green-400 w-full  text-sm font-bold text-green-600 rounded-md border-2 bg-green-100"
 									onClick={(e) => {
 										e.preventDefault();
 										loginHandler("test@gmail.com", "test@1234", authDispatch);
