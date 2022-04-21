@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, matchPath } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -20,7 +20,7 @@ function Navbar() {
 		authState: { token },
 		authDispatch,
 	} = useAuthContext();
-	const { pathname } = useLocation();
+	const location = useLocation();
 	const logoutHandler = (dispatch) => {
 		localStorage.removeItem("token");
 		dispatch({
@@ -70,11 +70,12 @@ function Navbar() {
 						</Link>
 					</li>
 				))}
-				{!matchPath("/", pathname) ? (
+				{token ? (
 					<li className="md:ml-8 text-l md:my-0 my-7 ">
 						<Link
 							to="/userProfile"
 							className="hover:text-green-500 duration-500"
+							state={{ from: location }}
 						>
 							User Profile
 						</Link>

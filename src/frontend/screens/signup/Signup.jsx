@@ -62,8 +62,8 @@ function Signup() {
 	};
 
 	return (
-		<div className="flex justify-center items-center  w-screen h-screen">
-			<div className="flex items-center justify-around shadow-md">
+		<div className="flex justify-center items-center  w-screen h-screen ">
+			<div className="flex items-center justify-around shadow-2xl  dark:bg-neutral-700 rounded-md bg-white">
 				<div className="hidden md:block h-1/2 w-1/2">
 					<img
 						className="h-full w-full bg-cover "

@@ -6,7 +6,7 @@ function PrivateRoute({ children }) {
 	const {
 		authState: { token },
 	} = useAuthContext();
-	const { location } = useLocation();
+	const location = useLocation();
 	return token ? (
 		children
 	) : (
