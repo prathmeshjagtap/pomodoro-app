@@ -1,15 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider, TaskProvider } from "./frontend/context";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// const root = ReactDOM.createRoot(document.getElementById("root"));
 // Call make Server
 makeServer();
-root.render(
+ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<AuthProvider>
@@ -18,5 +18,6 @@ root.render(
 				</TaskProvider>
 			</AuthProvider>
 		</BrowserRouter>
-	</React.StrictMode>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
