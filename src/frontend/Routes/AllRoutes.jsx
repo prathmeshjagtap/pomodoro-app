@@ -20,6 +20,14 @@ function AllRoutes() {
 					}
 				/>
 				<Route
+					path="/pomodoro/:taskId"
+					element={
+						<PrivateRoute>
+							<Pomodoro />
+						</PrivateRoute>
+					}
+				/>
+				<Route
 					path="/userProfile"
 					element={
 						<PrivateRoute>

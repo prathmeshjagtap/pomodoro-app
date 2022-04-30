@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider, TaskProvider } from "./frontend/context";
+import { AuthProvider, TaskProvider, TimerProvider } from "./frontend/context";
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // Call make Server
@@ -14,7 +14,9 @@ ReactDOM.render(
 		<BrowserRouter>
 			<AuthProvider>
 				<TaskProvider>
-					<App />
+					<TimerProvider>
+						<App />
+					</TimerProvider>
 				</TaskProvider>
 			</AuthProvider>
 		</BrowserRouter>

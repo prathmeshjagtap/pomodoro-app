@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Navbar, TaskModal } from "../../components";
-import { useAuthContext, useTaskContext } from "../../context";
+import { useAuthContext, useTaskContext, useTimerContext } from "../../context";
 import {
 	PencilAltIcon,
 	PlusCircleIcon,
 	TrashIcon,
+	ClockIcon,
 } from "@heroicons/react/solid";
 import { deleteTask, EditTask } from "../../services";
-import { taskConstants } from "../../constants";
+import { taskConstants, timeConstants } from "../../constants";
+import { useNavigate } from "react-router-dom";
 
 function Tasks() {
 	const [modal, setModal] = useState(false);
@@ -35,7 +37,8 @@ function Tasks() {
 		setModal(false);
 		setTask("");
 	};
-
+	const navigate = useNavigate();
+	const { timeDispatch } = useTimerContext();
 	return (
 		<>
 			<div className="h-full">
@@ -89,6 +92,19 @@ function Tasks() {
 											</div>
 
 											<div className="flex gap-4 ">
+												<ClockIcon
+													className="w-6 h-6 cursor-pointer"
+													onClick={() => {
+														timeDispatch({
+															type: timeConstants.CHANGE_TIME,
+															payload: {
+																workMinutes: item.time,
+																breakMinutes: 5,
+															},
+														});
+														navigate(`/pomodoro/${item._id}`);
+													}}
+												/>
 												<PencilAltIcon
 													className="w-6 h-6 cursor-pointer"
 													onClick={(e) => {
