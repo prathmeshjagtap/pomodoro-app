@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
+import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import { toast } from "react-toastify";
 import { toastStyle } from "../../utils";
 import { useAuthContext } from "../../context";
@@ -20,7 +19,6 @@ function Navbar() {
 		authState: { token },
 		authDispatch,
 	} = useAuthContext();
-	const location = useLocation();
 	const logoutHandler = (dispatch) => {
 		localStorage.removeItem("token");
 		dispatch({
