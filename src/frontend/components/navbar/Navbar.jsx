@@ -30,7 +30,7 @@ function Navbar() {
 		toast.success("Logout Successfully ", toastStyle);
 	};
 	return (
-		<div className="shadow-md w-full sticky top-0 left-0 md:flex justify-around  items-center bg-white  py-4 md:px-10 px-7 text-lg font-medium dark:bg-neutral-700 dark:text-white transition-all duration-300 ease-in">
+		<div className="shadow-md w-full sticky top-0 left-0 md:flex justify-around  items-center  bg-white  py-4 md:px-10 px-7 text-lg font-medium dark:bg-neutral-700 dark:text-white transition-all duration-300 ease-in z-10">
 			<Link to="/">
 				<h2 className="font-bold hover:text-green-500 ">✅ Tomato</h2>
 			</Link>
@@ -70,17 +70,6 @@ function Navbar() {
 						</Link>
 					</li>
 				))}
-				{token ? (
-					<li className="md:ml-8 text-l md:my-0 my-7 ">
-						<Link
-							to="/userProfile"
-							className="hover:text-green-500 duration-500"
-							state={{ from: location }}
-						>
-							User Profile
-						</Link>
-					</li>
-				) : null}
 				{token ? (
 					<li
 						className="md:ml-8 text-l md:my-0 my-7 "

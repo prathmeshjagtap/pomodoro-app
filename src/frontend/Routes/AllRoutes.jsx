@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Login, Signup, Pomodoro, UserProfile, Tasks } from "../screens";
+import { Home, Login, Signup, Pomodoro, Tasks } from "../screens";
 import Mockman from "mockman-js";
 import { PrivateRoute } from "./PrivateRoute";
 
@@ -24,14 +24,6 @@ function AllRoutes() {
 					element={
 						<PrivateRoute>
 							<Pomodoro />
-						</PrivateRoute>
-					}
-				/>
-				<Route
-					path="/userProfile"
-					element={
-						<PrivateRoute>
-							<UserProfile />
 						</PrivateRoute>
 					}
 				/>

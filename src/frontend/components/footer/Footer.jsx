@@ -24,7 +24,7 @@ function Footer() {
 						<a href="https://twitter.com/prathmesh_20">
 							<i className="fab fa-twitter-square hover:text-black dark:hover:text-green-400"></i>
 						</a>
-						<a href="https://github.com/prathmeshjagtap/ecommerce-Bookify">
+						<a href="https://github.com/prathmeshjagtap/pomodoro-app">
 							<i className="fab fa-github-square hover:text-black dark:hover:text-green-400"></i>
 						</a>
 					</div>
@@ -50,25 +50,16 @@ function Footer() {
 							Pomodoro
 						</Link>
 					</li>
-					<li className="dark:hover:text-green-400  hover:text-black font-semibold text-xl">
-						<Link className="footer__link" to="/userProfile">
-							Profile
-						</Link>
-					</li>
 				</ul>
 			</div>
 			<div className="md:block hidden ">
-				<h6 className="text-2xl font-bold my-4">Authentication</h6>
+				<h6 className="text-2xl font-bold my-4">General</h6>
 				<ul className="flex flex-col gap-4 ">
 					<li className="dark:hover:text-green-400  hover:text-black font-semibold text-xl">
-						<Link className="footer__link" to="/">
-							Signup
-						</Link>
+						<Link to="/">Privacy Policy</Link>
 					</li>
 					<li className="dark:hover:text-green-400  hover:text-black font-semibold text-xl">
-						<Link className="footer__link" to="/">
-							Sign In
-						</Link>
+						<Link to="/">Terms of use</Link>
 					</li>
 				</ul>
 			</div>
