@@ -13,7 +13,7 @@ function App() {
 	} = useAuthContext();
 	useEffect(() => {
 		if (!token || pathname !== "/pomodoro") {
-			document.title = "✅ Tomato";
+			document.title = "Tomato";
 		}
 	}, [token, pathname]);
 
