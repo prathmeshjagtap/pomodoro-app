@@ -65,6 +65,10 @@ function Timer({ setSettingsModal }) {
 		seconds = ` 0${seconds}`;
 	}
 
+	useEffect(() => {
+		document.title = minutes + " : " + seconds;
+	}, [minutes, seconds]);
+
 	return (
 		<div className="flex flex-col md:flex-row w-full flex-wrap h-full  md:justify-around justify-center items-center">
 			<div className="flex h-4/5 flex-col gap-2">
